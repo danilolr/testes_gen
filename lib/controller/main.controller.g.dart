@@ -29,11 +29,11 @@ mixin _$MainController on _MainControllerBase, Store {
       ActionController(name: '_MainControllerBase', context: context);
 
   @override
-  dynamic _copyUser(dynamic user) {
+  dynamic _copyUser(dynamic puser) {
     final _$actionInfo = _$_MainControllerBaseActionController.startAction(
         name: '_MainControllerBase._copyUser');
     try {
-      return super._copyUser(user);
+      return super._copyUser(puser);
     } finally {
       _$_MainControllerBaseActionController.endAction(_$actionInfo);
     }
