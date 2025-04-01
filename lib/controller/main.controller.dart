@@ -6,10 +6,15 @@ class MainController = _MainControllerBase with _$MainController;
 
 abstract class _MainControllerBase with Store {
   @observable
-  UserData? user;
+  dynamic user;
+
+  copyUser(UserData user) {
+    _copyUser(user);
+  }
 
   @action
-  copyUser(UserData user) {
-    user = UserData(id: user.id, name: user.name);
+  _copyUser(dynamic puser) {
+    final user = puser as UserData;
+    var resp = UserData(id: user.id, name: user.name);
   }
 }

@@ -13,13 +13,13 @@ mixin _$MainController on _MainControllerBase, Store {
       Atom(name: '_MainControllerBase.user', context: context);
 
   @override
-  InvalidType get user {
+  dynamic get user {
     _$userAtom.reportRead();
     return super.user;
   }
 
   @override
-  set user(InvalidType value) {
+  set user(dynamic value) {
     _$userAtom.reportWrite(value, super.user, () {
       super.user = value;
     });
@@ -29,11 +29,11 @@ mixin _$MainController on _MainControllerBase, Store {
       ActionController(name: '_MainControllerBase', context: context);
 
   @override
-  dynamic copyUser(InvalidType user) {
+  dynamic _copyUser(dynamic user) {
     final _$actionInfo = _$_MainControllerBaseActionController.startAction(
-        name: '_MainControllerBase.copyUser');
+        name: '_MainControllerBase._copyUser');
     try {
-      return super.copyUser(user);
+      return super._copyUser(user);
     } finally {
       _$_MainControllerBaseActionController.endAction(_$actionInfo);
     }
